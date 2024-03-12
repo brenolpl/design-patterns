@@ -1,0 +1,36 @@
+To use the FactoryMethod, we need to provide two interfaces:
+
+1 - The interface that will provide the main construction of the object, exemple:
+    If we need to create a factory of Cars, we will need an interface that define wich methods it will be necessary
+    to create an instance of the Car class, like:
+
+    public interface CarFactory {
+        Car createCar();
+    }
+
+2 - The interface that will provide the functionalities of the object, exemple:
+    A car is every class that implements the Car interface, which is returned by the CarFactory above.
+    So to have a Car, we need to create a concrete class that implements Car interface. In addition to that, a car can
+    share a brand like Ford, Fiat, Ferrari, etc. With that in mind, we can define specific factories, like:
+
+    public class FordFactory implements CarFactory {
+        @Override
+        public Car createCar() {
+            return new Mustang();
+        }
+    }
+
+    For the class above to be valid, the Mustang class must implement Car interface, that defines what information a Car
+    has.
+
+The Car interface can define multiple methods, which will tell to the class what it should implement, like:
+
+    public interface Car {
+        void showInfo();
+        int calculateMph();
+    }
+
+Good thing:
+    The consumer no need to know the specifics of how the factory deals with the information
+Bad thing:
+    To every new consumer we need to create another factory and another product.
