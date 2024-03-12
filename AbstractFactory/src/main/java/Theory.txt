@@ -1,0 +1,18 @@
+IMPORTANT: Check the theory of FactoryMethod first before reading this file.
+
+Continuing on the idea of FactoryMethod, if we had to separate different types of cars, we would need to create
+another product and another different factory, even if they were of the same brand.
+
+With the AbstractFactory, we can group this types together to inform which types of cars the factory returns, example:
+
+public interface CarFactory {
+    SedanCar createSedanCar();
+    PopularCar createPopularCar();
+    LuxuryCar createLuxuryCar();
+    RaceCar createRaceCar();
+}
+
+With that, the same brand can have multiples types of cars.
+
+This pattern has an issue: If we had to add a new type of car, it would be necessary to add the method to all the existing
+factories, which could led to hours of coding and possibility of unnecessary or undesired changes.
