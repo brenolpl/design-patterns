@@ -4,3 +4,10 @@ I will be implementing with time 23 different design patterns using Java 17, and
 The goal of the project is getting myself able to recognize and put in practice those patterns in real code implementations.
 
 Checkout his work at: https://brizeno.wordpress.com/padroes/
+
+Implemented so far (in order):
+
+    - Creation
+        - FactoryMethod
+        - AbstractFactory
+        - Builder

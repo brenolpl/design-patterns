@@ -1,0 +1,47 @@
+The builder pattern is likely the AbstractFactory and FactoryMethod, it is also to create objects.
+The difference between them is how each one deals with the creation and responsability of the methods.
+
+In the Builder pattern, we shall define methods that will construct the object in a specific way, given the builder
+Example:
+
+In the past examples, we had a CarFactory that build cars, we can have something close to this using:
+
+    public abstract class CarBuilder {
+        protected CarProduct car;
+
+        public CarBuilder() {
+            car = new carProduct();
+        }
+
+        public abstract void buildPrice();
+        public abstract void buildEngine();
+        public abstract void buildModel();
+
+        public CarProduct getCarProduct() {
+            return car;
+        }
+    }
+
+After having the builder, we can create Directors to use the builders, like:
+
+    public class ConcessionaireDirector {
+        protected CarBuilder mounter;
+
+        public ConcessionaireDirector(CarBuilder mounter) {
+            this.mounter = mounter;
+        }
+
+        public void buildCar() {
+            mounter.buildEngine();
+            mounter.buildModel();
+            mounter.buildPrice();
+        }
+
+        public CarProduct getCar() {
+            mounter.getCarProduct();
+        }
+    }
+
+The director can be used to shadow the logic of construction of the object from the client. The same idea as FactoryMethod
+and AbstractFactory. The advantage here is that there is no need to call all of the methods inside the builder, it can be
+called only the ones that are necessary.

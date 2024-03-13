@@ -13,6 +13,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="FactoryMethod" />
         <module name="AbstractFactory" />
+        <module name="Builder" />
       </profile>
     </annotationProcessing>
   </component>
