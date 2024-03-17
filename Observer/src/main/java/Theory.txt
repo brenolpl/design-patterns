@@ -1,0 +1,7 @@
+The Observer pattern is a pattern to subscribe to the changes of an object.
+Imagine that we are dealing with the current date, and every 10 seconds we want to show the date again.
+
+To do that in each element who uses this feature, we would need to implement in every case the same code, and in some
+cases, could not lead to the same values in all objects.
+
+The observers allow us to subscribe to the same value in all objects that watch that particular data.
