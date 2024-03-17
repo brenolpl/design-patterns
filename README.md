@@ -11,3 +11,6 @@ Implemented so far (in order):
         - FactoryMethod
         - AbstractFactory
         - Builder
+
+    - Behavior
+        - Observer
